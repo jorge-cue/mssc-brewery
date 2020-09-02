@@ -110,6 +110,8 @@ Desktop.ini
 ######################
 /bin/
 /deploy/
+/.idea/
+/.mvn/
 
 ######################
 # Logs
@@ -138,4 +140,4 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
-/.idea/
+
