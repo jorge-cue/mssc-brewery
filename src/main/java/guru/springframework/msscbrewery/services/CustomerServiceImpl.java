@@ -12,11 +12,20 @@ import java.util.UUID;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-    public static final String TEST_CUSTOMER_ID = "3d45d09e-f2b6-412f-bed9-c712ccbcfea1";
-
     public Optional<CustomerDto> getCustomer(UUID customerId) {
-        if (UUID.fromString(TEST_CUSTOMER_ID).equals(customerId))
-            return Optional.of(CustomerDto.builder().customerId(customerId).name("John Doe").build());
+        return Optional.of(CustomerDto.builder().customerId(customerId).name("John Doe").build());
+    }
+
+    public Optional<CustomerDto> createCustomer(CustomerDto customerDto) {
+        if (customerDto.getCustomerId() == null)
+            customerDto.setCustomerId(UUID.randomUUID());
+        return Optional.of(customerDto);
+    }
+
+    public Optional<CustomerDto> updateCustomer(UUID customerId, CustomerDto customerDto) {
         return Optional.empty();
+    }
+
+    public void deleteCustomer(UUID customerId) {
     }
 }
