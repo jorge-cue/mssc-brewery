@@ -15,4 +15,25 @@ public interface BeerService {
      * @return
      */
     Optional<BeerDto> getBeer(UUID beerId);
+
+    /**
+     *
+     * @param beerDto
+     * @return
+     */
+    BeerDto createBeer(BeerDto beerDto);
+
+    /**
+     *
+     * @param beerId
+     * @param beerDto
+     * @return
+     */
+    BeerDto updateBeer(UUID beerId, BeerDto beerDto);
+
+    /**
+     *
+     * @param beerId
+     */
+    void delete(UUID beerId);
 }
